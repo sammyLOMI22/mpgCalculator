@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  * program to calculate a car's mpg
@@ -51,7 +53,9 @@ private class CalcButtonActionListener implements ActionListener
         double milesD = Double.parseDouble(milesTXB.getText());
         double cap = Double.parseDouble(capTXB.getText());
          mpg =milesD/cap;
-         JOptionPane.showMessageDialog(null,"The current MPG of your last trip Is "+ mpg);
+        NumberFormat formatter = new DecimalFormat("#0.00");
+
+        JOptionPane.showMessageDialog(null,"The MPG of your last trip was "+ formatter.format(mpg) + " miles per gallon.");
     }
 }
 //main method
